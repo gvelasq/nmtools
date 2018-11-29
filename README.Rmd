@@ -1,0 +1,26 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# nmtools
+
+nmtools provides functions for common [NONMEM](https://www.iconplc.com/innovation/nonmem/) and [Perl-speaks-NONMEM](https://uupharmacometrics.github.io/PsN/) (PsN) workflows.
+
+## Installation
+
+You can install the development version of nmtools from [GitHub](https://github.com/gvelasq/nmtools) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("gvelasq/nmtools")
+```

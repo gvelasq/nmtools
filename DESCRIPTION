@@ -1,0 +1,14 @@
+Package: nmtools
+Title: Tools for NONMEM and Perl-speaks-NONMEM (PsN)
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Gustavo",
+           family = "Velásquez",
+           role = c("aut", "cre"),
+           email = "gvelasq2github@gmail.com")
+Description: Tools for common NONMEM and Perl-speaks-NONMEM (PsN) workflows.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.1
