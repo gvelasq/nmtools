@@ -9,6 +9,8 @@ Authors@R:
 Description: Tools for common NONMEM and Perl-speaks-NONMEM
     (PsN) workflows.
 License: MIT + file LICENSE
+URL: https://github.com/gvelasq/nmtools
+BugReports: https://github.com/gvelasq/nmtools/issues
 Imports: 
     assertthat,
     dplyr,
@@ -25,5 +27,3 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
-URL: https://github.com/gvelasq/nmtools
-BugReports: https://github.com/gvelasq/nmtools/issues
