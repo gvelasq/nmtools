@@ -9,6 +9,14 @@
 Tools for common NONMEM and Perl-speaks-NONMEM
     (PsN) workflows.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/gvelasq/nmtools}
+  \item Report bugs at \url{https://github.com/gvelasq/nmtools/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Gustavo Velásquez \email{gvelasq2github@gmail.com}
 
