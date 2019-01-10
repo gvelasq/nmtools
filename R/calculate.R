@@ -49,7 +49,7 @@ calculate_ci <- function(x, parameter = "THETA3", ci_width = 95, exclusions = c(
   if (!is.numeric(exclusions)) {
     rlang::abort("Must provide a numeric vector of exclusions")
   }
-  n_original <- nrow(x)
+  n_original <- nrow(x) - 1L
   n_excluded <- 0L
   if (1 %in% exclusions) {
     n_used <- nrow(x)
@@ -71,8 +71,6 @@ calculate_ci <- function(x, parameter = "THETA3", ci_width = 95, exclusions = c(
     x <- dplyr::filter(x, covariance_step_warnings == 0)
     n_excluded <- n_excluded + (n_used - nrow(x))
   }
-  n_used <- nrow(x)
-  assertthat::are_equal(n_original, n_used + n_excluded)
   if (ci_width == "90") {
     psn_coef <- 1.6449
   }
@@ -85,16 +83,19 @@ calculate_ci <- function(x, parameter = "THETA3", ci_width = 95, exclusions = c(
   if (ci_width == "99.9") {
     psn_coef <- 3.2905
   }
-  cat(glue::glue("Observations in original dataset:  n = {n_original}"), sep = "\n")
+  x_boot <- dplyr::slice(x, -1)
+  assertthat::are_equal(n_used - 1L, nrow(x_boot))
+  n_used <- nrow(x_boot)
+  assertthat::are_equal(n_original, n_used + n_excluded)
+  point_estimate <- x[[glue::glue("{parameter}")]][[1]]
+  lower_ci <- point_estimate - (psn_coef * sd(x_boot[[glue::glue("{parameter}")]]))
+  upper_ci <- point_estimate + (psn_coef * sd(x_boot[[glue::glue("{parameter}")]]))
+  cat(glue::glue("Observations in bootstrap dataset: n = {n_original} (not counting model 0 from original dataset)"), sep = "\n")
   cat(glue::glue("Observations excluded:             n = {n_excluded} (exclusions "), sep = "")
   cat(glue::glue_collapse(glue::glue("{exclusions}"), sep = ", "), sep = "")
   cat(")", sep = "\n")
   cat(glue::glue("Observations used to calculate CI: n = {n_used}"), sep = "\n")
   glue::glue_collapse(glue::glue("{exclusions}"), sep = ", ")
-  x_boot <- dplyr::slice(x, -1)
-  point_estimate <- x[[glue::glue("{parameter}")]][[1]]
-  lower_ci <- point_estimate - (psn_coef * sd(x_boot[[glue::glue("{parameter}")]]))
-  upper_ci <- point_estimate + (psn_coef * sd(x_boot[[glue::glue("{parameter}")]]))
   output <- tibble::tibble(n_original, n_used, n_excluded, parameter, ci_width, lower_ci, point_estimate, upper_ci)
   cat("\n")
   print.data.frame(output, row.names = FALSE)
