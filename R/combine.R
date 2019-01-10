@@ -55,9 +55,9 @@ combine_bootstraps <- function(path, runs = "bs_run1", out = "bootstrap_combined
   x <- dplyr::mutate(x, path = fs::dir_ls(folder_path, regexp = "[/]raw(.*)[.]csv$"))
   x <- suppressMessages(dplyr::mutate(x, raw_file = purrr::map(path, ~ readr::read_csv(.))))
   nms <- purrr::map(x$raw_file, ~ colnames(.))
-  nms_identical <- purrr::reduce(nms, identical)
+  nms_identical <- all(purrr::map_lgl(nms, identical, nms[[1]]))
   if (!nms_identical) {
-    rlang::warn("Column names in individual estimates (raw_results_*.csv) are not identical")
+    rlang::warn("Column names in individual bootstrap runs (raw_results_run#.csv) are not identical")
   }
   model_0 <- purrr::map_dfr(x$raw_file, ~ dplyr::slice(., 1))
   model_0_n_distinct <- dplyr::n_distinct(model_0)
