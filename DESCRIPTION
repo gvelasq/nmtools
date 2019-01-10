@@ -6,8 +6,21 @@ Authors@R:
            family = "Velásquez",
            role = c("aut", "cre"),
            email = "gvelasq2github@gmail.com")
-Description: Tools for common NONMEM and Perl-speaks-NONMEM (PsN) workflows.
+Description: Tools for common NONMEM and Perl-speaks-NONMEM
+    (PsN) workflows.
 License: MIT + file LICENSE
+Imports: 
+    assertthat,
+    dplyr,
+    fs,
+    glue,
+    here,
+    purrr,
+    readr,
+    rlang,
+    stats,
+    tibble,
+    tidyr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
