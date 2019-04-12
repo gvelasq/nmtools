@@ -2,3 +2,4 @@
 ^LICENSE\.md$
 ^nmtools\.Rproj$
 ^\.Rproj\.user$
+^\.travis\.yml$

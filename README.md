@@ -8,6 +8,12 @@ nmtools provides functions for common
 [Perl-speaks-NONMEM](https://uupharmacometrics.github.io/PsN/) (PsN)
 workflows.
 
+<!-- badges: start -->
+
+[![Travis build
+status](https://travis-ci.org/gvelasq/nmtools.svg?branch=master)](https://travis-ci.org/gvelasq/nmtools)
+<!-- badges: end -->
+
 ## Installation
 
 You can install the development version of nmtools from
