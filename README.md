@@ -12,6 +12,8 @@ workflows.
 
 [![Travis build
 status](https://travis-ci.org/gvelasq/nmtools.svg?branch=master)](https://travis-ci.org/gvelasq/nmtools)
+[![Codecov test
+coverage](https://codecov.io/gh/gvelasq/nmtools/branch/master/graph/badge.svg)](https://codecov.io/gh/gvelasq/nmtools?branch=master)
 <!-- badges: end -->
 
 ## Installation
