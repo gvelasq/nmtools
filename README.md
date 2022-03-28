@@ -11,7 +11,7 @@ workflows.
 <!-- badges: start -->
 
 [![Codecov test
-coverage](https://codecov.io/gh/gvelasq/nmtools/branch/master/graph/badge.svg)](https://codecov.io/gh/gvelasq/nmtools?branch=master)
+coverage](https://codecov.io/gh/gvelasq/nmtools/branch/main/graph/badge.svg)](https://app.codecov.io/gh/gvelasq/nmtools?branch=main)
 <!-- badges: end -->
 
 ## Installation

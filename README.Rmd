@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 nmtools provides functions for common [NONMEM](https://www.iconplc.com/innovation/nonmem/) and [Perl-speaks-NONMEM](https://uupharmacometrics.github.io/PsN/) (PsN) workflows.
 
 <!-- badges: start -->
-[![Codecov test coverage](https://codecov.io/gh/gvelasq/nmtools/branch/master/graph/badge.svg)](https://codecov.io/gh/gvelasq/nmtools?branch=master)
+[![Codecov test coverage](https://codecov.io/gh/gvelasq/nmtools/branch/main/graph/badge.svg)](https://app.codecov.io/gh/gvelasq/nmtools?branch=main)
 <!-- badges: end -->
 
 ## Installation
