@@ -12,6 +12,8 @@ workflows.
 
 [![Codecov test
 coverage](https://codecov.io/gh/gvelasq/nmtools/branch/main/graph/badge.svg)](https://app.codecov.io/gh/gvelasq/nmtools?branch=main)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
 ## Installation
